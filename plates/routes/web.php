@@ -11,19 +11,14 @@
 |
 */
 
-//read from session cookie (guest)
-//read from database (user)
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('/','LocalizationController@index');
+Route::get('/tracker', function () {
+    return view('tracker');
+});
 
-Route::get('/hoponin/','LocalizationController@index');
-
-Route::get('/hoponin/registeroffer','BrainController@registeranoffer')->name('registeranoffer');
-
-Route::get('/hoponin/registeranofferdetails','BrainController@registeranofferdetails')->name('registeranofferdetails');
-
-Route::post('/hoponin/registeranofferdetails','BrainController@registeranofferdetails')->name('registeranofferdetailspost');
-
-Route::post('/language','BrainController@setthelingo')->name('lingo');
-
-Auth::routes();
+Route::get('/orderlist', function () {
+    return view('orderlist');
+});

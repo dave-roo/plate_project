@@ -25,13 +25,8 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/hoponin';
+    protected $redirectTo = '/home';
 
-	protected function performLogout()
-	{ 
-		auth()->logout();
-		return back(); 
-	}
     /**
      * Create a new controller instance.
      *
