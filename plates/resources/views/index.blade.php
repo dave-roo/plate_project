@@ -5,11 +5,11 @@
   <title>SmartServe</title>
   <head>
     <meta name="csrf-token" content="{{ csrf_token() }}" />
-	
+
 	<script src="{{ asset('js/jquery.min.js') }}"></script>
 	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/app.css') }}">
   </head>
   <body>
     <div class="container">
@@ -19,12 +19,12 @@
         <p>{{ \Session::get('success') }}</p>
       </div><br />
      @endif
-	 
+
 	<img class="rounded mx-auto d-block img-thumbnail" src="{{ asset('img/logo_smartserve.png') }}">
 
-	 
+
 	<h1>Plate Assign</h1>
-	 
+
     <table class="table table-striped table-dark">
     <thead>
         <tr>
@@ -57,19 +57,19 @@
    </tbody>
   </table>
   </div>
-  
+
   </body>
 </html>
 
 <script type="text/javascript">
 $(document).ready(function(){
-	
+
     $(".setplate").click(function(){
-		
+
 		var dataOrder = {
 			id: $(this).attr('value')
         }
-		
+
 		$.ajax({
 			url: "http://localhost:8000/setplate",
 			method: "POST",
@@ -83,16 +83,16 @@ $(document).ready(function(){
 			}
 		});
 
-	
+
     });
-		
+
     $(".deactiveplate").click(function(){
 
 		var deactiveOrder = {
 			id: $(this).attr('value')
         }
-	
-	
+
+
 		$.ajax({
 			url: "http://localhost:8000/deactiveplate",
 			method: "POST",
@@ -107,6 +107,6 @@ $(document).ready(function(){
 		});
 
     });
-	
+
 });
 </script>

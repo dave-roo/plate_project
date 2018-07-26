@@ -5,16 +5,15 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
         <title>Order list</title>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.4/svg.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-		
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
+      	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
+        <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 		<body data-spy="scroll" data-target=".navbar" data-offset="50">
 		<div class="row">
 			<div class="col-6">
-			
+
 			<table class="table">
 			  <thead class="thead-dark">
 				<tr>
@@ -34,7 +33,7 @@
 				  <td><input size="2"></input></td>
 				</tr>
 			  </tbody>
-			</table>		
+			</table>
 			</div>
 			<div class="col-2"></div>
 		</div>
