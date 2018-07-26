@@ -12,39 +12,47 @@
   </head>
   <body>
     <div class="container">
-      <h2>SmartServer System</h2><br/>
+      <h2>SmartServe - Add to Menu</h2><br/>
       <form method="post" action="{{url('menu')}}" enctype="multipart/form-data">
         @csrf
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="form-group col-md-4">
-            <label for="Name">Name:</label>
-            <input type="text" class="form-control" name="name">
-          </div>
-        </div>
-
         <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="Descripton">Description</label>
               <input type="text" class="form-control" name="description">
             </div>
-          </div>
+        </div>
+		  
+        <div class="row">
+          <div class="col-md-4"></div>
+            <div class="form-group col-md-4">
+              <label for="Descripton">Category</label>
+				<div class="dropdown">
+				  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select </button>
+				  <ul class="dropdown-menu">
+					<li><a href="#">Entree</a></li>
+					<li><a href="#">Main</a></li>
+					<li><a href="#">Dessert</a></li>
+				  </ul>
+				</div>
+            </div>
+        </div>
 		  
         <div class="row">
           <div class="col-md-4"></div>
             <div class="form-group col-md-4">
               <label for="Price">Price</label>
-              <input type="text" class="form-control" name="price">
+              <input style="width:80px;" type="text" class="form-control" name="price">
             </div>
-          </div>
+        </div>
         
         <div class="row">
           <div class="col-md-4"></div>
-          <div class="form-group col-md-4" style="margin-top:60px">
+          <div class="form-group col-md-4" style="margin-top:10px">
             <button type="submit" class="btn btn-success">Submit</button>
           </div>
         </div>
+		
       </form>
     </div>
 

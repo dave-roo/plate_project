@@ -19,8 +19,16 @@ Route::get('/orderlist', function () {
     return view('orderlist');
 });
 
-Route::get('/menucreate', function () {
+Route::get('/menucreate', function () { //Dean
     return view('menucreate');
+});
+
+Route::get('/mainscreen', function () {
+    return view('mainscreen');
+});
+
+Route::get('/ordersystem', function () { //Dean
+    return view('ordersystem');
 });
 
 Route::get('/', 'MenuController@index');
