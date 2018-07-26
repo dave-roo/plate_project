@@ -12,7 +12,20 @@
   </head>
   <body>
     <div class="container">
-      <h2>SmartServe - Add to Menu</h2><br/>
+	  
+	<nav class="navbar navbar-expand-lg navbar navbar-dark bg-primary">
+	  <a class="navbar-brand" href="./mainscreen">Home</a>
+
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	  </button>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+		<ul class="navbar-nav">
+			- Add Menu Item
+		</ul>
+	  </div>
+	</nav>
+	  
       <form method="post" action="{{url('menu')}}" enctype="multipart/form-data">
         @csrf
         <div class="row">
