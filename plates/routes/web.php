@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/tracker', function () {
     return view('tracker');
 });
@@ -22,3 +18,23 @@ Route::get('/tracker', function () {
 Route::get('/orderlist', function () {
     return view('orderlist');
 });
+
+Route::get('/menucreate', function () {
+    return view('menucreate');
+});
+
+Route::get('/', 'MenuController@index');
+
+Route::get('/analytics', 'CustomeractivityController@index');
+
+Route::get('/assign', 'AssignController@index');
+
+Route::get('/readerupdate', 'AssignController@assignplateid');
+
+Route::post('/setplate', 'AssignController@setplate');
+
+Route::post('/deactiveplate', 'AssignController@deactiveplate');
+
+Route::resource('menus','MenuController');
+
+Route::resource('plates','PlateController');
