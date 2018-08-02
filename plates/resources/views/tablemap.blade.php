@@ -1,16 +1,14 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html>
     <head>
+		@include('layouts.partials.head')
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Table Map</title>
-		<link rel="stylesheet" href="{{asset('css/app.css')}}">
 		<link rel="stylesheet" href="{{ asset('css/mapping.css') }}">
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">  
-        <script src="{{ asset('js/jquery.min.js') }}"></script>
-      	<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+
       	<script src="{{ asset('js/interact.min.js') }}"></script>
 
 		<script type="text/javascript">			
