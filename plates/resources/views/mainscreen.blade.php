@@ -23,14 +23,14 @@
 
 		<div class="row">
 			<div class="col-4"></div>
-			<div style="padding:20px;" class="col-2"><button type="button" class="btn btn-warning btn-lg">Analysis</button></div>
-			<div style="padding:20px;" class="col-2"><button type="button" class="btn btn-danger btn-lg">Assign Plate</button></div>
+			<div style="padding:20px;" class="col-2"><a href="./analytics" class="btn btn-warning btn-lg">Analysis</a></div>
+			<div style="padding:20px;" class="col-2"><a href="./plateassign" class="btn btn-danger btn-lg">Assign Plate</a></div>
 		</div>
 
 		<div class="row">
 			<div class="col-4"></div>
-			<div style="padding:20px;" class="col-2"><button type="button" class="btn btn-info btn-lg">Table Map</button></div>
-			<div style="padding:20px;" class="col-2"><button type="button" class="btn btn-secondary btn-lg">Order Screen</button></div>
+			<div style="padding:20px;" class="col-2"><a href="./tablemap" class="btn btn-info btn-lg">Table Map</a></div>
+			<div style="padding:20px;" class="col-2"><a href="./ordersystem" class="btn btn-secondary btn-lg">Order Screen</a></div>
 		</div>
 
 		</div>

@@ -23,7 +23,7 @@ Route::get('/menucreate', function () { //Dean
     return view('menucreate');
 });
 
-Route::get('/mainscreen', function () {
+Route::get('/', function () {
     return view('mainscreen');
 });
 
@@ -31,7 +31,11 @@ Route::get('/ordersystem', function () { //Dean
     return view('ordersystem');
 });
 
-Route::get('/', 'MenuController@index');
+Route::get('/tablemap', function () { //Dean
+    return view('tablemap');
+});
+
+Route::get('/plateassign', 'MenuController@index');
 
 Route::get('/analytics', 'CustomeractivityController@index');
 

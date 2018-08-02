@@ -15,7 +15,7 @@ class MenuController extends Controller
     public function index()
     {
         $orders=Order::all();
-        return view('index', compact('orders'));
+        return view('plateassign', compact('orders'));
     }
 
     /**
