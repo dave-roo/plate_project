@@ -21,7 +21,9 @@
 				  <th scope="col">Category</th>
 				  <th scope="col">Description</th>
 				  <th scope="col">Quantity</th>
+				  <th scope="col">Table</th>
 				  <th scope="col">Seat</th>
+				  <th scope="col">Special</th>
 				</tr>
 			  </thead>
 			  <tbody>
@@ -31,6 +33,8 @@
 				  <td>Sliders (Pulled Pork)</td>
 				  <td><input size="2"></input></td>
 				  <td><input size="2"></input></td>
+				  <td><input size="2"></input></td>
+				  <td><input size="10"></input></td>
 				</tr>
 			  </tbody>
 			</table>
