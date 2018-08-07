@@ -35,6 +35,10 @@ Route::get('/tablemap', function () { //Dean
     return view('tablemap');
 });
 
+Route::get('/cusactivity', 'CustomeractivityController@cusactivity');
+
+Route::get('/performancemain', 'CustomeractivityController@performancemain');
+
 Route::get('/plateassign', 'MenuController@index');
 
 Route::get('/analytics', 'CustomeractivityController@index');
