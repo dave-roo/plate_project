@@ -15,12 +15,20 @@ class CustomeractivityController extends Controller
 	public function index()
     {
         $customeractivity=Customeractivity::all();
-		
-		
-		
         return view('customeractivity', compact('customeractivity'));
     }
 
+    public function cusactivity()
+    {
+        $cusactivity=Customeractivity::all();
+        return view('cusactivity', compact('cusactivity'));
+    }
+	
+    public function performancemain()
+    {
+        $performancemain=Customeractivity::all();
+        return view('performancemain', compact('performancemain'));
+    }
     /**
      * Show the form for creating a new resource.
      *
