@@ -50,3 +50,9 @@ Route::post('/deactiveplate', 'AssignController@deactiveplate');
 Route::resource('menus','MenuController');
 
 Route::resource('plates','PlateController');
+
+Route::resource('nerds', 'NerdController');
+
+Route::resource('items', 'ItemsController');
+
+Route::get('/menu', 'ItemsController@index');
