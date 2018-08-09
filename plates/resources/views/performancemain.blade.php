@@ -12,7 +12,6 @@
   <body>
 		
     <div class="container">
-	<canvas id="myChart"></canvas>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	  <a class="navbar-brand" href="./">Home</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,36 +29,8 @@
 	  </div>
 	</nav>
 	
-    <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Guests</th>
-        <th>Table</th>
-        <th>Duration (In-Out)</th>
-        <th>Duration (Out-Table)</th>
-        <th>Duration (In-Table)</th>
-        <th>In Time</th>
-        <th>Out Time</th>
-        <th>Arrival Time</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach($performancemain as $cusactive)
-      <tr>
-        <td>{{$cusactive['guests']}}</td>
-        <td>{{$cusactive['table']}}</td>
-        <td>00:20</td>
-        <td>00:05</td>
-        <td>01:25</td>
-        <td>15:00</td>
-        <td>15:20</td>
-        <td>15:25</td>
-        <td>07-08-2018</td>
-	  </tr>
-      @endforeach
-    </tbody>
-  </table>
+	<canvas id="myChart"></canvas>
+	
   </div>
   </body>
   
@@ -203,14 +174,22 @@ window.chartColors = {
 
 var leData = {
     labels: [
-        "ME",
-        "SE"
+		'January',
+		'February',
+		'March',
+		'April',
+		'May',
+		'June',
+		'July',
+		'August',
+		'September',
+		'October',
+		'November',
+		'December'
     ],
     datasets: [{
-        label: false,
-        data: [100, 75],
-        backgroundColor: ["#669911", "#119966"],
-        hoverBackgroundColor: ["#66A2EB", "#FCCE56"]
+        data: [{{ $performance2018 }}],
+        backgroundColor: [window.chartColors.red, window.chartColors.orange, window.chartColors.yellow, window.chartColors.green, window.chartColors.blue, window.chartColors.purple, window.chartColors.red, window.chartColors.orange, window.chartColors.yellow, window.chartColors.green, window.chartColors.blue, window.chartColors.purple],
     }]
 };
 
@@ -218,6 +197,10 @@ var myChart = new Chart(ctx, {
     type: 'horizontalBar',
     data: leData,
     options: {
+        title: {
+            display: true,
+            text: 'Average plate processing time (minutes) - 2018'
+        },
 		legend: {
 			display: false
 		},

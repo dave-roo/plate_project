@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Customeractivity;
+use App\Order;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
@@ -22,13 +24,8 @@ class AssignController extends Controller
 	
 	public function assignplateid(Request $request)
     {
-		
 		$plateid = $request->input('plateid');
-		
-		
 		DB::table('assign')->where('orderid', 1)->update(['plateid' => $plateid]);
-		
-		
 		return;
     }
 	
@@ -57,5 +54,12 @@ class AssignController extends Controller
 		
 		return;
     }
+	
+    public function orderlist()
+    {
+        $orderlist = Order::all();
+        return view('orderlist', compact('orderlist'));
+    }
+	
 	
 }

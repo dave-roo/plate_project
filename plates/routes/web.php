@@ -15,10 +15,6 @@ Route::get('/tracker', function () {
     return view('tracker');
 });
 
-Route::get('/orderlist', function () {
-    return view('orderlist');
-});
-
 Route::get('/menucreate', function () { //Dean
     return view('menucreate');
 });
@@ -34,6 +30,8 @@ Route::get('/ordersystem', function () { //Dean
 Route::get('/tablemap', function () { //Dean
     return view('tablemap');
 });
+
+Route::get('/orderlist', 'AssignController@orderlist');
 
 Route::get('/cusactivity', 'CustomeractivityController@cusactivity');
 
