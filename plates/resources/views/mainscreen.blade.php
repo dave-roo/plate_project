@@ -18,7 +18,7 @@
 
 		<div class="row">
 			<div class="col-4"></div>
-			<div style="padding:20px;" class="col-2"><a href="./menucreate" class="btn btn-success btn-lg">Edit Menu</a></div>
+			<div style="padding:20px;" class="col-2"><a href="./items" class="btn btn-success btn-lg">Edit Menu</a></div>
 			<div style="padding:20px;" class="col-2"><a href="./orderlist" class="btn btn-primary btn-lg">Order List</a></div>
 		</div>
 
