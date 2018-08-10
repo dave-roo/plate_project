@@ -11,7 +11,6 @@
   <body>
 		
     <div class="container">
-	<canvas id="myChart"></canvas>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 	  <a class="navbar-brand" href="./">Home</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,51 +27,43 @@
 		</ul>
 	  </div>
 	</nav>
-	
-    <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Guests</th>
-        <th>Table</th>
-        <th>Duration</th>
-        <th>Arrival</th>
-        <th>Departure</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody>
-      @foreach($cusactivity as $cusactive)
-      <tr>
-        <td>{{$cusactive['guests']}}</td>
-        <td>{{$cusactive['table']}}</td>
-        <td>01:20</td>
-        <td>15:00</td>
-        <td>16:20</td>
-        <td>07-08-2018</td>
-	  </tr>
-      @endforeach
-    </tbody>
-  </table>
-  </div>
+	<canvas id="myChart"></canvas>
+
   </body>
   
 <script>
 var ctx = document.getElementById("myChart").getContext('2d');
+
+window.chartColors = {
+	red: 'rgb(255, 99, 132)',
+	orange: 'rgb(255, 159, 64)',
+	yellow: 'rgb(255, 205, 86)',
+	green: 'rgb(75, 192, 192)',
+	blue: 'rgb(54, 162, 235)',
+	purple: 'rgb(153, 102, 255)',
+	grey: 'rgb(201, 203, 207)'
+};
 
 var myChart = new Chart(ctx, {
     type: 'line',
     data: {
 		labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
         datasets: [{
-            data: [400, 200, 240, 430, 530, 353, 400, 200, 340, 430, 530, 543],
+            data: [{{ $customeractivity2018 }}],
 			label: "Customers - 2018",
-			borderColor: "#c45850",
+			borderColor: window.chartColors.red,
 			fill: false
         },
         {
-            data: [300, 200, 240, 230, 530, 350, 422, 200, 140, 430, 530, 543],
+            data: [300, 200, 210, 230, 530, 350, 422, 200, 140, 430, 530, 543],
 			label: "Customers - 2017",
-			borderColor: "#b25453",
+			borderColor: window.chartColors.green,
+			fill: false
+		},
+        {
+            data: [324, 30, 240, 30, 130, 150, 222, 101, 140, 210, 100, 43],
+			label: "Customers - 2016",
+			borderColor: window.chartColors.purple,
 			fill: false
 		}],
     },

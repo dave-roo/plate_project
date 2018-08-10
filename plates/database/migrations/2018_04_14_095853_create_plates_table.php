@@ -15,9 +15,16 @@ class CreatePlatesTable extends Migration
     {
         Schema::create('plates', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('email')->unique();
-            $table->integer('plateid');
-            $table->timestamps();
+			$table->integer('tableno');
+			$table->integer('seatno');
+			$table->integer('orderid');
+			$table->integer('itemid');
+            $table->string('plateid'); //RFID code
+           	$table->dateTime('ingoingtime'); //in-going time
+           	$table->dateTime('outgoingtime'); //out-going time
+           	$table->dateTime('arrivaltime'); //arrival time
+           	$table->float('inarrivalduration'); //in-going to arrival duration	
+           	$table->dateTime('created_at');			
         });
     }
 
