@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use DB;
 use App\Item;
+use Illuminate\Support\Facades\Validator;
 
 class ItemsController extends Controller
 {
@@ -42,21 +43,15 @@ class ItemsController extends Controller
      */
     public function store(Request $request)
     {
-// validate
-        // read more on validation at http://laravel.com/docs/validation
-     /*   $rules = array(
-            'name'       => 'required',
-            'email'      => 'required|email',
-            'nerd_level' => 'required|numeric'
-        );
-        $validator = Validator::make(Input::all(), $rules);
+        // Validation
+        $this->validate($request, [
+            'category' => 'required|max:25|regex:/^[\pL\s\-]+$/u',
+            'title' => 'required|max:25|regex:/^[\pL\s\-]+$/u',
+            'body' => 'required|max:25',
+            'price' => 'required',
+            ]);
 
-        // process the login
-        if ($validator->fails()) {
-            return Redirect::to('nerds/create')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        } else {    */
+
             // store
             $item = new Item;
             $item->category = $request->input('category');
@@ -113,21 +108,14 @@ return view('items.edit')
      */
     public function update(Request $request, $id)
     {
-      /*  // validate
-        // read more on validation at http://laravel.com/docs/validation
-        $rules = array(
-            'name'       => 'required',
-            'email'      => 'required|email',
-            'nerd_level' => 'required|numeric'
-        );
-        $validator = Validator::make(Input::all(), $rules);
+      // validate
+        $this->validate($request, [
+            'category' => 'required|max:25|regex:/^[\pL\s\-]+$/u',
+            'title' => 'required|max:25|regex:/^[\pL\s\-]+$/u',
+            'body' => 'max:25|required',
+            'price' => 'required|between:0,999.99',
+            ]);
 
-        // process the login
-        if ($validator->fails()) {
-            return Redirect::to('nerds/' . $id . '/edit')
-                ->withErrors($validator)
-                ->withInput(Input::except('password'));
-        } else { */
             // store
             $item = Item::find($id);
             $item->category = $request->input('category');

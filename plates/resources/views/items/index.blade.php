@@ -2,6 +2,7 @@
 
 @section('content')
 
+<title>SmartServe | Menu</title>
 <h1>All the Items</h1>
 
 <!-- will be used to show any messages -->
@@ -16,7 +17,7 @@
             <td>Category</td>
             <td>Title</td>
             <td>Description</td>
-            <td>Price</td>
+            <td>Price $</td>
         </tr>
     </thead>
     <tbody>

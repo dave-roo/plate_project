@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add to Menu</title>
+
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -19,6 +19,7 @@
     </ul>
 </nav>
 
+@include('inc.messages')
 @yield('content')
 
 </div>

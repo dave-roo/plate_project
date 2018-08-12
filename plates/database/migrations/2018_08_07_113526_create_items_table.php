@@ -18,7 +18,7 @@ class CreateItemsTable extends Migration
             $table->string('category');
             $table->string('title');
             $table->mediumText('body');
-            $table->integer('price');
+            $table->float('price');
 
             $table->timestamps();
         });

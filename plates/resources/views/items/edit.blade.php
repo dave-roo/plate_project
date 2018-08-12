@@ -2,6 +2,7 @@
 
 @section('content')
 
+<title>SmartServe | Menu Edit</title>
 <h1>Edit {{ $item->title }}</h1>
 
 <!-- if there are creation errors, they will show here -->
@@ -26,7 +27,7 @@
 
 <div class="form-group">
     {{Form::label('price', "Price")}}
-    {{Form::text('price', $item->price, ['class' => 'form-control', 'placeholder' => 'Price'])}}
+    {!!Form::number('price', $item->price, ['class' => 'form-control', 'placeholder' => 'Price', 'step' => '0.01'])!!}
 </div>
 
 {{Form::hidden('_method','PUT')}}
