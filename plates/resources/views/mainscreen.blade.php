@@ -14,24 +14,29 @@
 
 		<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-		<div style="padding-top:250px;">
-
+		<div style="padding-top:50px;">
+	
 		<div class="row">
 			<div class="col-4"></div>
-			<div style="padding:20px;" class="col-2"><a href="./items" class="btn btn-success btn-lg">Edit Menu</a></div>
-			<div style="padding:20px;" class="col-2"><a href="./orderlist" class="btn btn-primary btn-lg">Order List</a></div>
+			<div style="padding:40px;" class="col-2"><img style="padding:20px;" src="{{ asset('img/logo_smartserve.png') }}"></div>
+		</div>
+	
+		<div class="row">
+			<div class="col-4"></div>
+			<div style="padding:20px;" class="col-2"><a href="./items" class="btn btn-success btn-lg btn-block">Edit Menu</a></div>
+			<div style="padding:20px;" class="col-2"><a href="./orderlist" class="btn btn-primary btn-lg btn-block">Order List</a></div>
 		</div>
 
 		<div class="row">
 			<div class="col-4"></div>
-			<div style="padding:20px;" class="col-2"><a href="./analytics" class="btn btn-warning btn-lg">Analysis</a></div>
-			<div style="padding:20px;" class="col-2"><a href="./plateassign" class="btn btn-danger btn-lg">Assign Plate</a></div>
+			<div style="padding:20px;" class="col-2"><a href="./analytics" class="btn btn-warning btn-lg btn-block">Analysis</a></div>
+			<div style="padding:20px;" class="col-2"><a href="./plateassign" class="btn btn-danger btn-lg btn-block">Assign Plate</a></div>
 		</div>
 
 		<div class="row">
 			<div class="col-4"></div>
-			<div style="padding:20px;" class="col-2"><a href="./tablemap" class="btn btn-info btn-lg">Table Map</a></div>
-			<div style="padding:20px;" class="col-2"><a href="./ordersystem" class="btn btn-secondary btn-lg">Order Screen</a></div>
+			<div style="padding:20px;" class="col-2"><a href="./tablemap" class="btn btn-info btn-lg btn-block">Table Map</a></div>
+			<div style="padding:20px;" class="col-2"><a href="./ordersystem" class="btn btn-secondary btn-lg btn-block">Order Screen</a></div>
 		</div>
 
 		</div>
