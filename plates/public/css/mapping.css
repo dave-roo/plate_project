@@ -2,31 +2,10 @@
   width: 60px;
   height: 60px;
   min-height: 1.5em;
-
-  background-color: #29e;
-  color: white;
-
-  border-radius: 0.75em;
-
-  -webkit-transform: translate(0px, 0px);
-          transform: translate(0px, 0px);
-}
-
-#drag-me::before {
-  content: "#" attr(id);
-  font-weight: bold;
-}
-
-#table-1, #table-2, #table-3, #table-4, #table-5, #table-6 {
-  width: 160px;
-  height: 160px;
-  min-height: 1.5em;
-
-  background-color: #29e;
-  color: white;
-
-  border-radius: 0.75em;
-
+  background-color: #00FF0B;
+  text-align: center;
+  border-radius: 2em;
+  padding-top:3px;
   -webkit-transform: translate(0px, 0px);
           transform: translate(0px, 0px);
 }
@@ -37,18 +16,48 @@
 }
 
 #outer-dropzone {
-  height: 270px;
-  width: 300px;
-  background: yellow;
+  height: 250px;
+  width: 250px;
+  background: #FDFE98;
+  border: solid;
+  text-align: center;
 }
 
 #inner-dropzone {
     position: relative;
-    width: 35%;
-    height: 35%;
+    width: 50%;
+    height: 50%;
     margin: auto;
-    margin-top: 30%;
-    background: red;
+    margin-top: 25%;
+    background: white;
+	border: solid;
+}
+
+#outgoing {
+  height: 100px;
+  width: 200px;
+  background: #CC99FE;
+  border: dotted;
+  text-align: center;
+  color: white;
+}
+
+#ingoing {
+  height: 100px;
+  width: 200px;
+  background: #CC99FE;
+  border: dotted;
+  text-align: center;
+  color: white;
+}
+
+#entrance {
+  height: 50px;
+  width: 150px;
+  background: #A12621;
+  border: dotted;
+  text-align: center;
+  color: white;
 }
 
 .dropzone {
@@ -71,8 +80,6 @@
 
 .drag-drop {
   display: inline-block;
-
-  color: #fff;
   background-color: #29e;
   border: solid 2px #fff;
 
@@ -93,4 +100,6 @@
   height: 500px;
   border-style: solid;
   border-width: 5px;
+  background-color: #4D4D4D;
 }
+

@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
 		@include('layouts.partials.head')
@@ -7,8 +7,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+		<div class="container">
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="./">Home</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		</nav>
+		
 		<div class="row">
-			<div class="col-10">
+			<div class="col-12">
 				<table class="table table-striped">
 				<thead>
 				  <tr>
@@ -35,4 +43,6 @@
 			  </table>
 			</div>
 		</div>
+		</div>
+		
 </html>

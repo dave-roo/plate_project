@@ -18,7 +18,7 @@
 	
 		<div class="row">
 			<div class="col-4"></div>
-			<div style="padding:40px;" class="col-2"><img style="padding:20px;" src="{{ asset('img/logo_smartserve.png') }}"></div>
+			<div style="padding:40px;" class="col-4"><img style="padding:20px;"><img class="rounded mx-auto d-block img-thumbnail" src="{{ asset('img/logo_smartserve.png') }}"></div>
 		</div>
 	
 		<div class="row">

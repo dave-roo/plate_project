@@ -15,9 +15,12 @@ class CreateTableareaTable extends Migration
     {
         Schema::create('tablearea', function (Blueprint $table) {
             $table->increments('id');
+			$table->integer('status');
 			$table->integer('orderid');
+			$table->integer('itemid');
+			$table->integer('tableno');
             $table->integer('seatno');
-            $table->integer('status');
+            $table->integer('type');
         });
     }
 
