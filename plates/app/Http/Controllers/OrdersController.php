@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use DB;
-use App\Item;
+use App\Order;
 use Illuminate\Support\Facades\Validator;
 
-class ItemsController extends Controller
+class OrdersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,11 +18,11 @@ class ItemsController extends Controller
     public function index()
     {
                 // get all the nerds
-                $items = Item::all();
+                $orders = Order::all();
 
                 // load the view and pass the nerds
-                return view('items.index')
-                    ->with('items', $items); 
+                return view('orders.index')
+                    ->with('orders', $orders); 
     }
 
     /**
@@ -32,7 +32,7 @@ class ItemsController extends Controller
      */
     public function create()
     {
-        return view('items.create');
+        return view('orders.create');
     }
 
     /**
@@ -42,27 +42,29 @@ class ItemsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        // Validation
-        $this->validate($request, [
+    {   /*
+        // Validation 
+         $this->validate($request, [ 
             'category' => 'required|max:25|regex:/^[\pL\s\-]+$/u',
             'title' => 'required|max:25|regex:/^[\pL\s\-]+$/u',
             'body' => 'required|max:500',
             'price' => 'required',
-            ]);
-
+            ]); 
+           */ 
 
             // store
-            $item = new Item;
-            $item->category = $request->input('category');
-            $item->title = $request->input('title');
-            $item->body = $request->input('body');
-            $item->price = $request->input('price');
-            $item->save();
+            $order = new Order;
+            $order->category = $request->input('category');
+            $order->title = $request->input('title');
+            $order->comments = $request->input('comments');
+            $order->quantity = $request->input('quantity');
+            $order->price = $request->input('price');
+            $order->table = $request->input('table');
+            $order->seat = $request->input('seat');
+            $order->save();
 
             // redirect
-            return redirect('/items')->with('success', 'Item Created');
-       // }
+            return redirect('/orders')->with('success', 'Order Placed');
     }
 
     /**
@@ -73,13 +75,7 @@ class ItemsController extends Controller
      */
     public function show($id)
     {
-// get the nerd
-$item = Item::find($id);
-
-// show the view and pass the nerd to it
-return view('items.show')
-    ->with('item', $item);
-
+        //
     }
 
     /**
@@ -90,13 +86,7 @@ return view('items.show')
      */
     public function edit($id)
     {
-// get the nerd
-$item = Item::find($id);
-
-// show the edit form and pass the nerd
-return view('items.edit')
-    ->with('item', $item);
-
+        //
     }
 
     /**
@@ -107,26 +97,29 @@ return view('items.edit')
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {
-      // validate
-        $this->validate($request, [
+    {   /*
+        // Validation 
+         $this->validate($request, [ 
             'category' => 'required|max:25|regex:/^[\pL\s\-]+$/u',
             'title' => 'required|max:25|regex:/^[\pL\s\-]+$/u',
-            'body' => 'max:500|required',
-            'price' => 'required|between:0,999.99',
-            ]);
+            'body' => 'required|max:500',
+            'price' => 'required',
+            ]); 
+           */ 
 
             // store
-            $item = Item::find($id);
-            $item->category = $request->input('category');
-            $item->title = $request->input('title');
-            $item->body = $request->input('body');
-            $item->price = $request->input('price');
-            $item->save();
+            $order = new Order;
+            $order->category = $request->input('category');
+            $order->title = $request->input('title');
+            $order->comments = $request->input('comments');
+            $order->quantity = $request->input('quantity');
+            $order->price = $request->input('price');
+            $order->table = $request->input('table');
+            $order->seat = $request->input('seat');
+            $order->save();
 
             // redirect
-            return redirect('/items')->with('success', 'Item Updated');
-        //}
+            return redirect('/orders')->with('success', 'Order Changed');
     }
 
     /**
@@ -137,11 +130,6 @@ return view('items.edit')
      */
     public function destroy($id)
     {
-        // delete
-        $item = Item::find($id);
-        $item->delete();
-
-        // redirect
-        return redirect('/items')->with('success', 'Item Removed');
+        //
     }
 }

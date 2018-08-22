@@ -23,9 +23,11 @@ Route::get('/', function () {
     return view('mainscreen');
 });
 
+/*
 Route::get('/ordersystem', function () { //Dean
     return view('ordersystem');
 });
+*/
 
 Route::get('/tablemap', function () { //Dean
     return view('tablemap');
@@ -58,3 +60,7 @@ Route::resource('nerds', 'NerdController');
 Route::resource('items', 'ItemsController');
 
 Route::get('/menu', 'ItemsController@index');
+
+Route::resource('orders', 'OrdersController');
+
+Route::get('/ordersystem', 'OrdersController@index');
