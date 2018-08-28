@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use DB;
 use App\Order;
 use Illuminate\Support\Facades\Validator;
+use App\Item;
 
 class OrdersController extends Controller
 {
@@ -32,7 +33,9 @@ class OrdersController extends Controller
      */
     public function create()
     {
-        return view('orders.create');
+        $items = Item::all();
+        return view('orders.create')
+            ->with('items', $items);
     }
 
     /**

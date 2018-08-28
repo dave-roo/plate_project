@@ -3,7 +3,7 @@
 @section('content')
 
 <title>SmartServe | Menu</title>
-<h1>All the Items</h1>
+<h1>All the Orders</h1>
 
 <!-- will be used to show any messages -->
 @if (Session::has('message'))
