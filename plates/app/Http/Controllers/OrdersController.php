@@ -57,11 +57,12 @@ class OrdersController extends Controller
 
             // store
             $order = new Order;
+			$order->orderid = 2;//$request->input('orderid');
             $order->category = $request->input('category');
             $order->title = $request->input('title');
-            $order->comments = $request->input('comments');
+            $order->comments = "test";//$request->input('comments');
             $order->quantity = $request->input('quantity');
-            $order->price = $request->input('price');
+            $order->price = 22;//$request->input('price');
             $order->table = $request->input('table');
             $order->seat = $request->input('seat');
             $order->save();

@@ -13,6 +13,8 @@ class CreateOrdersTable extends Migration
      */
     public function up()
     {
+		Schema::dropIfExists('orders');
+		
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
 			$table->integer('orderid'); // maybe should be changed to increments
@@ -23,16 +25,9 @@ class CreateOrdersTable extends Migration
             $table->float('price');
             $table->integer('table');
             $table->integer('seat');
+			$table->date('updated_at');
+			$table->date('created_at');
+			
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
-    public function down()
-    {
-        Schema::dropIfExists('orders');
     }
 }
