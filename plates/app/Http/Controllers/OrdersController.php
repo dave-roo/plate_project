@@ -34,8 +34,14 @@ class OrdersController extends Controller
     public function create()
     {
         $items = Item::all();
-        return view('orders.create')
-            ->with('items', $items);
+        $select = [];
+        $selprice = [];
+        foreach($items as $item){
+            $select[$item->id] = $item->title;
+            $selprice[$item->id] = $item->price;
+        }
+        return view('orders.create', compact('select'), compact('selprice'));
+        //    ->with('items', $items);
     }
 
     /**

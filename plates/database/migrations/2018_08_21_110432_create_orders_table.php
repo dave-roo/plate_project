@@ -23,6 +23,7 @@ class CreateOrdersTable extends Migration
             $table->float('price');
             $table->integer('table');
             $table->integer('seat');
+            $table->timestamps();
         });
     }
 
