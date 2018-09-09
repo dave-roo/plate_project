@@ -61,5 +61,28 @@ class AssignController extends Controller
         return view('orderlist', compact('orderlist'));
     }
 	
+    public function gettableinfo()
+    {
+		$platestatus = 0;
+		$status = array();
+		$i = 0;
+		
+		for ($x = 1; $x <= 6; $x++) {
+			$status[$x] = 0;
+
+			$plateid = DB::table('tablearea')->where('id', $x)->where('status', 1)->first();
+			
+			if ($plateid) {
+				if($plateid->status == 1) {
+					$status[$x] = 1;
+				}
+				else{
+					$status[$x] = 0;
+				}			
+			}
+		}
+		
+        return $status;
+    }
 	
 }

@@ -24,7 +24,7 @@
 		};
 		
 		//on load
-
+/*
 		// target elements with the "draggable" class
 		interact('.draggable')
 		  .draggable({
@@ -60,7 +60,7 @@
 
 		  // this is used later in the resizing and gesture demos
 		  window.dragMoveListener = dragMoveListener;
-		  
+		  */
 			interact('.dropzone').dropzone({
 			  // only accept elements matching this CSS selector
 			  accept: '.drag-drop',
@@ -113,9 +113,7 @@
 				event.target.classList.remove('drop-target');
 			  }
 			});
-			//data-x="261" data-y="39" style="transform: translate(261px, 39px);
-
-  
+			
 		</script>
 		<body>
 		<div class="container">  
@@ -142,10 +140,64 @@
 				<div style="position: absolute; margin-left:786px; margin-top:260px;" id="drag-3" class="draggable drag-drop">S-3 T2</div>
 				<div style="position: absolute; margin-left:604px; margin-top:260px;" id="drag-4" class="draggable drag-drop">S-4 T2</div>
 			
-				<div style="position: absolute; margin-left:320px; margin-top:35px;" id="drag-3" class="draggable drag-drop">S-5</div>
-				<div style="position: absolute; margin-left:80px; margin-top:35px;" id="drag-4" class="draggable drag-drop">S-6</div>
+				<div style="position: absolute; margin-left:320px; margin-top:35px;" id="drag-5" class="draggable drag-drop">S-5</div>
+				<div style="position: absolute; margin-left:80px; margin-top:35px;" id="drag-6" class="draggable drag-drop">S-6</div>
 				
 			</div>
+			
 		</div>
 		</body>
 </html>
+
+<script>
+			setInterval(function(){get_update();}, 3000);
+
+			function get_update(){
+				$.ajax({url: "/gettableinfo", success: function(result){
+						
+						if(result[1] == 1){
+							document.getElementById("drag-1").style.backgroundColor  = "rgb(255,127,80)";
+						}
+						else {
+							document.getElementById("drag-1").style.backgroundColor  = "rgb(50,205,50)";
+						}
+						
+						if(result[2] == 1){
+							document.getElementById("drag-2").style.backgroundColor  = "rgb(255,127,80)";
+						}
+						else {
+							document.getElementById("drag-2").style.backgroundColor  = "rgb(50,205,50)";
+						}
+						
+						if(result[3] == 1){
+							document.getElementById("drag-3").style.backgroundColor  = "rgb(255,127,80)";
+						}
+						else {
+							document.getElementById("drag-3").style.backgroundColor  = "rgb(50,205,50)";
+						}
+						
+						if(result[4] == 1){
+							document.getElementById("drag-4").style.backgroundColor  = "rgb(255,127,80)";
+						}
+						else {
+							document.getElementById("drag-4").style.backgroundColor  = "rgb(50,205,50)";
+						}
+						
+						if(result[5] == 1){
+							document.getElementById("drag-5").style.backgroundColor  = "rgb(255,127,80)";
+						}
+						else {
+							document.getElementById("drag-5").style.backgroundColor  = "rgb(50,205,50)";
+						}
+				
+						if(result[6] == 1){
+							document.getElementById("drag-6").style.backgroundColor  = "rgb(255,127,80)";
+						}
+						else {
+							document.getElementById("drag-6").style.backgroundColor  = "rgb(50,205,50)";
+						}
+						
+						
+				}});
+			};
+</script>
