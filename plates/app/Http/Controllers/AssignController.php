@@ -82,7 +82,25 @@ class AssignController extends Controller
 			}
 		}
 		
+		//item number
+		for ($x = 7; $x <= 12; $x++) {
+			$status[$x] = 0;
+
+			$itemid = DB::table('tablearea')->where('id', $x-6)->first();
+			
+			if ($itemid) {
+				$status[$x] = $itemid->itemid;
+			}
+		}
+		
         return $status;
+    }
+	
+    public function getorderlist()
+    {
+		$orderlist = DB::table('orders')->get();
+		
+        return $orderlist;
     }
 	
 }

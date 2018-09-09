@@ -135,13 +135,13 @@
 				<div style="position: absolute; margin-left:10px; margin-top:5px;" id="ingoing">In-going</div>
 				<div style="position: absolute; margin-left:900px; margin-top:430px;" id="entrance">Entrance</div>
 				
-				<div style="position: absolute; margin-left:204px; margin-top:260px;" id="drag-1" class="draggable drag-drop">S-1 T1</div>
-				<div style="position: absolute; margin-left:386px; margin-top:260px;" id="drag-2" class="draggable drag-drop">S-2 T1</div>
-				<div style="position: absolute; margin-left:786px; margin-top:260px;" id="drag-3" class="draggable drag-drop">S-3 T2</div>
-				<div style="position: absolute; margin-left:604px; margin-top:260px;" id="drag-4" class="draggable drag-drop">S-4 T2</div>
+				<div style="position: absolute; margin-left:204px; margin-top:260px;" id="drag-1" class="draggable drag-drop">S1 T1</div>
+				<div style="position: absolute; margin-left:386px; margin-top:260px;" id="drag-2" class="draggable drag-drop">S2 T1</div>
+				<div style="position: absolute; margin-left:786px; margin-top:260px;" id="drag-3" class="draggable drag-drop">S4 T2</div>
+				<div style="position: absolute; margin-left:604px; margin-top:260px;" id="drag-4" class="draggable drag-drop">S3 T2</div>
 			
-				<div style="position: absolute; margin-left:320px; margin-top:35px;" id="drag-5" class="draggable drag-drop">S-5</div>
-				<div style="position: absolute; margin-left:80px; margin-top:35px;" id="drag-6" class="draggable drag-drop">S-6</div>
+				<div style="position: absolute; margin-left:320px; margin-top:35px;" id="drag-5" class="draggable drag-drop">S5</div>
+				<div style="position: absolute; margin-left:80px; margin-top:35px;" id="drag-6" class="draggable drag-drop">S6</div>
 				
 			</div>
 			
@@ -156,49 +156,61 @@
 			function get_update(){
 				$.ajax({url: "/gettableinfo", success: function(result){
 						
+						//Red is when result status is equal to 1
+						
 						if(result[1] == 1){
 							document.getElementById("drag-1").style.backgroundColor  = "rgb(255,127,80)";
+							document.getElementById("drag-1").innerHTML = "S1 T1" + "<br />" + "<b style='font-size:12px;'>" + result[7] + "</b>";
 						}
 						else {
 							document.getElementById("drag-1").style.backgroundColor  = "rgb(50,205,50)";
+							document.getElementById("drag-1").innerHTML = "S1 T1";
 						}
 						
 						if(result[2] == 1){
 							document.getElementById("drag-2").style.backgroundColor  = "rgb(255,127,80)";
+							document.getElementById("drag-2").innerHTML = "S2 T1" + "<br />" + "<b style='font-size:12px;'>" + result[8] + "</b>";
 						}
 						else {
 							document.getElementById("drag-2").style.backgroundColor  = "rgb(50,205,50)";
+							document.getElementById("drag-2").innerHTML = "S2 T1";
 						}
 						
 						if(result[3] == 1){
 							document.getElementById("drag-3").style.backgroundColor  = "rgb(255,127,80)";
+							document.getElementById("drag-3").innerHTML = "S4 T2" + "<br />" + "<b style='font-size:12px;'>" + result[9] + "</b>";
 						}
 						else {
 							document.getElementById("drag-3").style.backgroundColor  = "rgb(50,205,50)";
+							document.getElementById("drag-3").innerHTML = "S4 T2";
 						}
 						
 						if(result[4] == 1){
 							document.getElementById("drag-4").style.backgroundColor  = "rgb(255,127,80)";
+							document.getElementById("drag-4").innerHTML = "S3 T2" + "<br />" + "<b style='font-size:12px;'>" + result[10] + "</b>";
 						}
 						else {
 							document.getElementById("drag-4").style.backgroundColor  = "rgb(50,205,50)";
+							document.getElementById("drag-4").innerHTML = "S3 T2";
 						}
 						
 						if(result[5] == 1){
 							document.getElementById("drag-5").style.backgroundColor  = "rgb(255,127,80)";
+							document.getElementById("drag-5").innerHTML = "S5" + "<br />" + "<b style='font-size:12px;'>" + result[11] + "</b>";
 						}
 						else {
 							document.getElementById("drag-5").style.backgroundColor  = "rgb(50,205,50)";
+							document.getElementById("drag-5").innerHTML = "S5";
 						}
 				
 						if(result[6] == 1){
 							document.getElementById("drag-6").style.backgroundColor  = "rgb(255,127,80)";
+							document.getElementById("drag-6").innerHTML = "S6" + "<br />" + "<b style='font-size:12px;'>" + result[12] + "</b>";
 						}
 						else {
 							document.getElementById("drag-6").style.backgroundColor  = "rgb(50,205,50)";
+							document.getElementById("drag-6").innerHTML = "S6";
 						}
-						
-						
 				}});
 			};
 </script>

@@ -29,7 +29,7 @@
 
 		<div class="row">
 			<div class="col-4"></div>
-			<div style="padding:20px;" class="col-2"><a href="./analytics" class="btn btn-warning btn-lg btn-block">Analysis</a></div>
+			<div style="padding:20px;" class="col-2"><a href="./cusactivity" class="btn btn-warning btn-lg btn-block">Analysis</a></div>
 			<div style="padding:20px;" class="col-2"><a href="./plateassign" class="btn btn-danger btn-lg btn-block">Assign Plate</a></div>
 		</div>
 

@@ -39,7 +39,6 @@
         <th>Duration</th>
         <th>Arrival</th>
         <th>Departure</th>
-        <th>Day of the week</th>
       </tr>
     </thead>
     <tbody>
@@ -50,7 +49,6 @@
         <td>{{$cusactive['duration']}}</td>
         <td>{{$cusactive['arrival']}}</td>
         <td>{{$cusactive['departure']}}</td>
-        <td>{{$cusactive['dayoftheweek']}}</td>
 	  </tr>
       @endforeach
     </tbody>

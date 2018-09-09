@@ -8,6 +8,11 @@
   </head>
   <body>
     <div class="container">
+	
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <a class="navbar-brand" href="./">Home</a>
+		</nav>
+	
     <br />
     @if (\Session::has('success'))
       <div class="alert alert-success">

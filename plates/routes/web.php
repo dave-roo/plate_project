@@ -47,6 +47,8 @@ Route::get('/assign', 'AssignController@index');
 
 Route::get('/readerupdate', 'AssignController@assignplateid');
 
+Route::get('/getorderlist', 'AssignController@getorderlist');
+
 Route::get('/gettableinfo', 'AssignController@gettableinfo');
 
 Route::post('/setplate', 'AssignController@setplate');
