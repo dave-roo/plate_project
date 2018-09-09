@@ -150,6 +150,7 @@
 </html>
 
 <script>
+			document.onload = get_update();
 			setInterval(function(){get_update();}, 3000);
 
 			function get_update(){
