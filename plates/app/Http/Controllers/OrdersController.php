@@ -175,4 +175,79 @@ class OrdersController extends Controller
         // redirect
         return redirect('/orders')->with('success', 'Order Removed');
     }
+	
+    public function getmains()
+    {
+		$category = "Main";
+		$list = array();
+		
+		for ($x = 1; $x <= 100; $x++) {
+
+			$meal = DB::table('orders')->where('id', $x)->where('category', $category)->first();
+			
+			if($meal){
+				if ($meal->category == $category) {
+					$list[$x] = $meal->description;
+				}
+			}
+		}
+		
+        return $list;
+    }
+	
+    public function getentrees()
+    {
+		$category = "Entree";
+		$list = array();
+		
+		for ($x = 1; $x <= 100; $x++) {
+
+			$meal = DB::table('orders')->where('id', $x)->where('category', $category)->first();
+			
+			if($meal){
+				if ($meal->category == $category) {
+					$list[$x] = $meal->description;
+				}
+			}
+		}
+		
+        return $list;
+    }
+	
+    public function getdesserts()
+    {
+		$category = "Dessert";
+		$list = array();
+		
+		for ($x = 1; $x <= 100; $x++) {
+
+			$meal = DB::table('orders')->where('id', $x)->where('category', $category)->first();
+			
+			if($meal){
+				if ($meal->category == $category) {
+					$list[$x] = $meal->description;
+				}
+			}
+		}
+		
+        return $list;
+    }
+	
+    public function getprice()
+    {
+		$list = array();
+		
+		for ($x = 1; $x <= 100; $x++) {
+
+			$meal = DB::table('orders')->where('id', $x)->first();
+			
+			if($meal){
+				$list[$meal->description] = $meal->price;
+			}
+		}
+		
+        return $list;
+    }
+	
+	
 }
