@@ -68,7 +68,7 @@
         </tr>
     </thead>
 
-@for ($i = 0;   $i <= 1;    $i++)
+@for ($i = 0;   $i < 1;    $i++)
 
 @php
 
@@ -81,7 +81,7 @@
 <tr>
     <td>
         {{Form::label('orderid', "Order_ID")}}
-        {{ Form::number('orderid', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Description'])}}
+        {{ Form::number('orderid', '', ['class' => 'form-control', 'placeholder' => 'Order ID'])}}
         <!--select('orderid', array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'))}}
         -->
         </td>
@@ -103,12 +103,14 @@
         {{ Form::select('title', $select, null, ['class' => 'form-control'])}}
     </td>
     <td>
-        {!! Form::label('comments', 'Comments') !!}
-        {!!Form::text('comments', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Description'])!!}
+        {{ Form::label('comments', "Comments") }}
+        {{Form::text('comments', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Description'])}}
     </td>
     <td>
             {{Form::label('quantity', "Quantity")}}
-            {{ Form::select('quantity', array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'))}}
+            {{ Form::number('quantity', '', ['class' => 'form-control', 'placeholder' => 'Quantity'])}}
+            <!-- Form::select('quantity', array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'))}}
+            --> 
     </td>
     <td>
        <!-- {Form::label('price', "Price")}}
@@ -126,11 +128,15 @@
     </td>
     <td>
             {{Form::label('table', "Table")}}
-            {{ Form::select('table', array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'))}}
+            {{ Form::number('table', '', ['class' => 'form-control', 'placeholder' => 'Table NO.'])}}
+        <!--     Form::select('table', array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'))}}
+        -->
     </td>
     <td>
             {{Form::label('seat', "Seat")}}
-            {{ Form::select('seat', array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'))}}
+            {{ Form::number('seat', '', ['class' => 'form-control', 'placeholder' => 'Seat NO.'])}}
+        <!--    {{ Form::select('seat', array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'))}}
+        -->    
     </td>
 </tr>
 </tbody>

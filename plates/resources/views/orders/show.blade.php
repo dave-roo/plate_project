@@ -1,17 +1,22 @@
-@extends('layouts.items_layout')
+@extends('layouts.orders_layout')
 
 @section('content')
 
 <title>SmartServe | Menu Show</title>
-<h1>Showing {{ $item->title }}</h1>
+<h1>Showing {{ $order->title }}</h1>
 
     <div class="jumbotron text-center">
-        <h2>{{ $item->title }}</h2>
+        <h2>{{ $order->title }}</h2>
         <p>
-            <strong>Category:</strong> {{ $item->category }}<br>
-            <strong>Title:</strong> {{ $item->title }}<br>
-            <strong>Description:</strong> {{ $item->body }}<br>
-            <strong>Price:</strong> $ {{ $item->price }}
+            <strong>ID:</strong> {{ $order->id }}<br>
+            <strong>Order ID:</strong> {{ $order->orderid }}<br>
+            <strong>Category:</strong> {{ $order->category }}<br>
+            <strong>Title:</strong> {{ $order->title }}<br>
+            <strong>Comments:</strong> {{ $order->comments }}<br>
+            <strong>Quantity:</strong> {{ $order->quantity }}<br>
+            <strong>Price:</strong> $ {{ $order->price }}<br>
+            <strong>Table:</strong> {{ $order->table }}<br>
+            <strong>Seat:</strong> {{ $order->seat }}<br>
         </p>
     </div>
 

@@ -20,10 +20,17 @@ class OrdersController extends Controller
     {
                 // get all the nerds
                 $orders = Order::all();
+                $items = Item::all();
+                $select = [];
+                $selprice = [];
+                foreach($items as $item){
+                    $selprice[$item->id] = $item->price;
+                    $select[$item->id] = $item->title;
+                    }                
 
                 // load the view and pass the nerds
-                return view('orders.index')
-                    ->with('orders', $orders); 
+                return view('orders.index', compact('orders'), compact('selprice', 'select'));
+                    //->with('orders', $orders); 
     }
 
     /**
@@ -40,7 +47,7 @@ class OrdersController extends Controller
             $select[$item->id] = $item->title;
             $selprice[$item->id] = $item->price;
         }
-        return view('orders.create', compact('select'), compact('selprice'));
+        return view('orders.create', compact('select', 'selprice'));
         //    ->with('items', $items);
     }
 
@@ -63,10 +70,10 @@ class OrdersController extends Controller
 
             // store
             $order = new Order;
-			$order->orderid = 2;//$request->input('orderid');
+			$order->orderid = $request->input('orderid');//2
             $order->category = $request->input('category');
             $order->title = $request->input('title');
-            $order->comments = "test";//$request->input('comments');
+            $order->comments = $request->input('comments');//comments = "test";//
             $order->quantity = $request->input('quantity');
             $order->price = 22;//$request->input('price');
             $order->table = $request->input('table');
@@ -85,7 +92,12 @@ class OrdersController extends Controller
      */
     public function show($id)
     {
-        //
+        $order = Order::find($id);
+
+        // show the view and pass the nerd to it
+        return view('orders.show')
+            ->with('order', $order);
+        
     }
 
     /**
@@ -96,7 +108,22 @@ class OrdersController extends Controller
      */
     public function edit($id)
     {
-        //
+        // get the nerd
+        $order = Order::find($id);
+                $items = Item::all();
+        $select = [];
+        $selprice = [];
+        foreach($items as $item){
+            $select[$item->id] = $item->title;
+            $selprice[$item->id] = $item->price;
+        }
+        //return view('orders.create', compact('select'), compact('selprice'));
+        //    ->with('items', $items);
+
+        // show the edit form and pass the nerd
+        return view('orders.edit', compact('order'), compact('select', 'selprice'));
+        //    ->with('order', $order);
+
     }
 
     /**
@@ -118,12 +145,13 @@ class OrdersController extends Controller
            */ 
 
             // store
-            $order = new Order;
+            $order = Order::find($id);
+            $order->orderid = $request->input('orderid');
             $order->category = $request->input('category');
             $order->title = $request->input('title');
             $order->comments = $request->input('comments');
             $order->quantity = $request->input('quantity');
-            $order->price = $request->input('price');
+            $order->price = 29;//$request->input('price');
             $order->table = $request->input('table');
             $order->seat = $request->input('seat');
             $order->save();
@@ -140,6 +168,11 @@ class OrdersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // delete
+        $order = Order::find($id);
+        $order->delete();
+
+        // redirect
+        return redirect('/orders')->with('success', 'Order Removed');
     }
 }
