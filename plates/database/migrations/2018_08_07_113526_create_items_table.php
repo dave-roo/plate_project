@@ -13,15 +13,18 @@ class CreateItemsTable extends Migration
      */
     public function up()
     {
+		Schema::dropIfExists('items');
+		
         Schema::create('items', function (Blueprint $table) {
             $table->increments('id');
             $table->string('category');
             $table->string('title');
             $table->mediumText('body');
             $table->float('price');
-
             $table->timestamps();
         });
+		
+		//Schema::dropIfExists('migrations');
     }
 
     /**
