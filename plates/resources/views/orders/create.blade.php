@@ -25,9 +25,9 @@
     <td>
 		<div class="form-group">
 		  <select class="form-control" id="category">
-			<option>Entree</option>
-			<option>Main</option>
-			<option>Dessert</option>
+			<option value="Entree">Entree</option>
+			<option value="Main">Main</option>
+			<option value="Dessert">Dessert</option>
 		  </select>
 		</div>
     </td>
@@ -105,6 +105,7 @@ $( "#category" ).change(function() {
 			i=0;
 			while (i<100) {
 				if(result[i] != null){
+					console.log(result[i]);
 					$("#meal").append('<option value="' + result[i] + '">' + result[i] + '</option>');
 				}
 				i++;

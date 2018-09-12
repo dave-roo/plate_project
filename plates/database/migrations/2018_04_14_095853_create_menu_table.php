@@ -40,8 +40,55 @@ class CreateMenuTable extends Migration
 		
 		DB::table('menus')->insert(
 			array(
-				'title' => 'Wings',
-				'description' => 'Chicken with hot sauce',
+				'title' => 'Burger',
+				'description' => 'Blue cheese and fries',
+				'price'=>rand(1,50),
+				'category'=>'Main',
+				'created_at'=>'2018-09-' . rand(1,30) . ' 20:34:05',
+				'updated_at'=>'2018-09-' . rand(1,30) . ' 20:34:05'
+				
+			)
+		);
+		
+		DB::table('menus')->insert(
+			array(
+				'title' => 'Pasta',
+				'description' => 'with Meatball',
+				'price'=>rand(1,50),
+				'category'=>'Main',
+				'created_at'=>'2018-09-' . rand(1,30) . ' 20:34:05',
+				'updated_at'=>'2018-09-' . rand(1,30) . ' 20:34:05'
+				
+			)
+		);
+		
+		DB::table('menus')->insert(
+			array(
+				'title' => 'Steak',
+				'description' => 'Meaty Goodness',
+				'price'=>rand(1,50),
+				'category'=>'Main',
+				'created_at'=>'2018-09-' . rand(1,30) . ' 20:34:05',
+				'updated_at'=>'2018-09-' . rand(1,30) . ' 20:34:05'
+				
+			)
+		);
+		
+		DB::table('menus')->insert(
+			array(
+				'title' => 'Soup',
+				'description' => 'Hot Soup',
+				'price'=>rand(1,50),
+				'category'=>'Entree',
+				'created_at'=>'2018-09-' . rand(1,30) . ' 20:34:05',
+				'updated_at'=>'2018-09-' . rand(1,30) . ' 20:34:05'
+			)
+		);
+		
+		DB::table('menus')->insert(
+			array(
+				'title' => 'Salad',
+				'description' => 'Green',
 				'price'=>rand(1,50),
 				'category'=>'Entree',
 				'created_at'=>'2018-09-' . rand(1,30) . ' 20:34:05',
@@ -53,6 +100,17 @@ class CreateMenuTable extends Migration
 			array(
 				'title' => 'Cake',
 				'description' => 'Cheese Cake with berries',
+				'price'=>rand(1,50),
+				'category'=>'Dessert',
+				'created_at'=>'2018-09-' . rand(1,30) . ' 20:34:05',
+				'updated_at'=>'2018-09-' . rand(1,30) . ' 20:34:05'
+			)
+		);
+		
+		DB::table('menus')->insert(
+			array(
+				'title' => 'Icecream',
+				'description' => 'Chocolate',
 				'price'=>rand(1,50),
 				'category'=>'Dessert',
 				'created_at'=>'2018-09-' . rand(1,30) . ' 20:34:05',

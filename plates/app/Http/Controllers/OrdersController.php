@@ -180,16 +180,19 @@ class OrdersController extends Controller
     {
 		$category = "Main";
 		$list = array();
+		$j = 0;
 		
 		for ($x = 1; $x <= 100; $x++) {
 
-			$meal = DB::table('orders')->where('id', $x)->where('category', $category)->first();
+			$meal = DB::table('menus')->where('id', $x)->where('category', $category)->first();
 			
 			if($meal){
 				if ($meal->category == $category) {
-					$list[$x] = $meal->description;
+					$j++;
+					$list[$j] = $meal->title;
 				}
 			}
+			
 		}
 		
         return $list;
@@ -202,11 +205,11 @@ class OrdersController extends Controller
 		
 		for ($x = 1; $x <= 100; $x++) {
 
-			$meal = DB::table('orders')->where('id', $x)->where('category', $category)->first();
+			$meal = DB::table('menus')->where('id', $x)->where('category', $category)->first();
 			
 			if($meal){
 				if ($meal->category == $category) {
-					$list[$x] = $meal->description;
+					$list[$x] = $meal->title;
 				}
 			}
 		}
@@ -216,16 +219,16 @@ class OrdersController extends Controller
 	
     public function getdesserts()
     {
-		$category = "Entree";
+		$category = "Dessert";
 		$list = array();
 		
 		for ($x = 1; $x <= 100; $x++) {
 
-			$meal = DB::table('orders')->where('id', $x)->where('category', $category)->first();
+			$meal = DB::table('menus')->where('id', $x)->where('category', $category)->first();
 			
 			if($meal){
 				if ($meal->category == $category) {
-					$list[$x] = $meal->description;
+					$list[$x] = $meal->title;
 				}
 			}
 		}
@@ -239,10 +242,10 @@ class OrdersController extends Controller
 		
 		for ($x = 1; $x <= 100; $x++) {
 
-			$meal = DB::table('orders')->where('id', $x)->first();
+			$meal = DB::table('menus')->where('id', $x)->first();
 			
 			if($meal){
-				$list[$meal->description] = $meal->price;
+				$list[$meal->title] = $meal->price;
 			}
 		}
 		
