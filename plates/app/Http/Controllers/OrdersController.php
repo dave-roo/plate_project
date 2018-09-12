@@ -216,7 +216,7 @@ class OrdersController extends Controller
 	
     public function getdesserts()
     {
-		$category = "Dessert";
+		$category = "Entree";
 		$list = array();
 		
 		for ($x = 1; $x <= 100; $x++) {
