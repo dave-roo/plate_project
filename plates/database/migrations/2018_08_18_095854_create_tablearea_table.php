@@ -13,6 +13,8 @@ class CreateTableareaTable extends Migration
      */
     public function up()
     {
+		Schema::dropIfExists('tablearea');
+		
         Schema::create('tablearea', function (Blueprint $table) {
             $table->increments('id');
 			$table->integer('status');
@@ -22,6 +24,8 @@ class CreateTableareaTable extends Migration
             $table->integer('seatno');
             $table->integer('type');
         });
+		
+		//Schema::dropIfExists('migrations');
     }
 
     /**

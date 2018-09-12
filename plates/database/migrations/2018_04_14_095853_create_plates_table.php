@@ -13,6 +13,8 @@ class CreatePlatesTable extends Migration
      */
     public function up()
     {
+		Schema::dropIfExists('plates');
+		
         Schema::create('plates', function (Blueprint $table) {
             $table->increments('id');
 			$table->integer('tableno');
@@ -26,6 +28,8 @@ class CreatePlatesTable extends Migration
            	$table->float('inarrivalduration'); //in-going to arrival duration	
            	$table->dateTime('created_at');			
         });
+		
+		//Schema::dropIfExists('migrations');
     }
 
     /**

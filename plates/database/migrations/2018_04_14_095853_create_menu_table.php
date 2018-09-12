@@ -13,6 +13,8 @@ class CreateMenuTable extends Migration
      */
     public function up()
     {
+		Schema::dropIfExists('menus');
+		
         Schema::create('menus', function (Blueprint $table) {
             $table->increments('id');
 			$table->string('name');
@@ -20,6 +22,8 @@ class CreateMenuTable extends Migration
 			$table->integer('price');
             $table->timestamps();
         });
+		
+		//Schema::dropIfExists('migrations');
     }
 
     /**
