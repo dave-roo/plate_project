@@ -25,7 +25,7 @@ class CreateTableareaTable extends Migration
             $table->integer('type');
         });
 		
-		//Schema::dropIfExists('migrations');
+
     }
 
     /**

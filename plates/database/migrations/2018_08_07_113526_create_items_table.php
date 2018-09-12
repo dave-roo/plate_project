@@ -24,7 +24,7 @@ class CreateItemsTable extends Migration
             $table->timestamps();
         });
 		
-		//Schema::dropIfExists('migrations');
+
     }
 
     /**

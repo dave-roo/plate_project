@@ -24,7 +24,6 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
-		//////Schema::dropIfExists('migrations');
 		
 	}
 

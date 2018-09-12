@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
 			$table->integer('orderid');
+            $table->string('name');
             $table->string('category');
             $table->string('description');
             $table->mediumText('comments');
@@ -27,6 +28,32 @@ class CreateOrdersTable extends Migration
             $table->integer('seat');
         });
 		
-		//Schema::dropIfExists('migrations');
+		DB::table('orders')->insert(
+			array(
+				'orderid' => 1,
+				'name'=>'Parma',
+				'category'=>'Main',
+				'description' => 'Chicken with ham and cheese',
+				'comments'=>'-',
+				'quantity'=>rand(1,10),
+				'price'=>rand(1,50),				
+				'table'=>rand(1,2),
+				'seat'=>rand(1,2)
+			)
+		);
+		
+		DB::table('orders')->insert(
+			array(
+				'orderid' => 2,
+				'name'=>'Cake',
+				'category'=>'Entree',
+				'description' => 'Cheese Cake with berries',
+				'comments'=>'-',
+				'quantity'=>rand(1,10),
+				'price'=>rand(1,50),				
+				'table'=>rand(1,2),
+				'seat'=>rand(1,2)
+			)
+		);
     }
 }

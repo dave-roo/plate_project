@@ -36,7 +36,6 @@ class CreateCustomeractivityTable extends Migration
 		);
 		}
 		
-		//Schema::dropIfExists('migrations');
     }
 
     /**

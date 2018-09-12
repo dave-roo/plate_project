@@ -20,9 +20,7 @@ class CreatePasswordResetsTable extends Migration
             $table->string('token');
             $table->timestamp('created_at')->nullable();
         });
-    
-		//////Schema::dropIfExists('migrations');
-	
+    	
 	}
 	
 

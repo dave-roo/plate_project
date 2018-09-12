@@ -24,7 +24,7 @@ class CreateNerdsTable extends Migration
             $table->timestamps();
         });
 		
-		//Schema::dropIfExists('migrations');
+
     }
 
     /**
