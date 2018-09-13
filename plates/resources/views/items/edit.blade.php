@@ -24,8 +24,8 @@
 </div>
 
 <div class="form-group">
-    {{ Form::label('body', 'Body') }}
-    {{Form::textarea('body', $item->body, ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Description'])}}
+    {{ Form::label('descirption', 'Description') }}
+    {{Form::textarea('description', $item->description, ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Description'])}}
 </div>
 
 <div class="form-group">

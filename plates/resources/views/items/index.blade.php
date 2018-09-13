@@ -26,7 +26,7 @@
             <td>{{ $value->id }}</td>
             <td>{{ $value->category }}</td>
             <td>{{ $value->title }}</td>
-            <td>{{ $value->body }}</td>
+            <td>{{ $value->description }}</td>
             <td>{{ $value->price }}</td>
 
             <!-- we will also add show, edit, and delete buttons -->

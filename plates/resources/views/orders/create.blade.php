@@ -52,7 +52,10 @@
     </td>
     <td>
         <textarea id="comments" class="form-control" placeholder=""></textarea>
-    </td>
+		</td>
+		<td>
+<p>Submit Button</p>
+		</td>
 </tr>
 </tbody>
 

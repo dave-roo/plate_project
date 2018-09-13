@@ -19,13 +19,13 @@
 </div>
 
 <div class="form-group">
-        {{ Form::label('title', 'Title') }}
-        {{ Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Name Of Item'])}}
-    </div>
+    {{ Form::label('title', 'Title') }}
+    {{ Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Name Of Item'])}}
+</div>
 
 <div class="form-group">
-    {{ Form::label('description', 'Description') }}
-    {{Form::textarea('description', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Description'])}}
+    {{ Form::label('body', 'Body') }}
+    {{Form::textarea('body', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Description'])}}
 </div>
 
 <div class="form-group">

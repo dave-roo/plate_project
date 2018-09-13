@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use DB;
 use App\Item;
+use App\Menu;
 use Illuminate\Support\Facades\Validator;
 
 class ItemsController extends Controller
@@ -19,10 +20,11 @@ class ItemsController extends Controller
     {
                 // get all the nerds
                 $items = Item::all();
+                $menus = Menu::all();
 
                 // load the view and pass the nerds
                 return view('items.index')
-                    ->with('items', $items); 
+                    ->with('items', $menus); 
     }
 
     /**
@@ -43,7 +45,7 @@ class ItemsController extends Controller
      */
     public function store(Request $request)
     {
-        // Validation
+ /*       // Validation
         $this->validate($request, [
             'category' => 'required|max:25|regex:/^[\pL\s\-]+$/u',
             'title' => 'required|max:25|regex:/^[\pL\s\-]+$/u',
@@ -59,9 +61,16 @@ class ItemsController extends Controller
             $item->body = $request->input('body');
             $item->price = $request->input('price');
             $item->save();
+            */
 
+            $menu = new Menu;
+            $menu->title = $request->input('title');
+            $menu->description = $request->input('description');
+            $menu->price = $request->input('price');
+            $menu->category = $request->input('category');
+            $menu->save();
             // redirect
-            return redirect('/items')->with('success', 'Item Created');
+            return redirect('/items')->with('success', 'Menu Item Created');
        // }
     }
 
@@ -73,12 +82,12 @@ class ItemsController extends Controller
      */
     public function show($id)
     {
-// get the nerd
-$item = Item::find($id);
+        // get the nerd
+        $menu = Menu::find($id);
 
-// show the view and pass the nerd to it
-return view('items.show')
-    ->with('item', $item);
+        // show the view and pass the nerd to it
+        return view('items.show')
+            ->with('item', $menu);
 
     }
 
@@ -90,12 +99,12 @@ return view('items.show')
      */
     public function edit($id)
     {
-// get the nerd
-$item = Item::find($id);
+        // get the nerd
+        $menu = Menu::find($id);
 
-// show the edit form and pass the nerd
-return view('items.edit')
-    ->with('item', $item);
+        // show the edit form and pass the nerd
+        return view('items.edit')
+            ->with('item', $menu);
 
     }
 
@@ -108,7 +117,7 @@ return view('items.edit')
      */
     public function update(Request $request, $id)
     {
-      // validate
+/*      // validate
         $this->validate($request, [
             'category' => 'required|max:25|regex:/^[\pL\s\-]+$/u',
             'title' => 'required|max:25|regex:/^[\pL\s\-]+$/u',
@@ -116,16 +125,23 @@ return view('items.edit')
             'price' => 'required|between:0,999.99',
             ]);
 
-            // store
+            // store 
             $item = Item::find($id);
             $item->category = $request->input('category');
             $item->title = $request->input('title');
             $item->body = $request->input('body');
             $item->price = $request->input('price');
             $item->save();
+*/
+            $menu = Menu::find($id);
+            $menu->title = $request->input('title');
+            $menu->description = $request->input('description');
+            $menu->price = $request->input('price');
+            $menu->category = $request->input('category');
+            $menu->save();
 
             // redirect
-            return redirect('/items')->with('success', 'Item Updated');
+            return redirect('/items')->with('success', 'Menu Item Updated');
         //}
     }
 
@@ -138,10 +154,10 @@ return view('items.edit')
     public function destroy($id)
     {
         // delete
-        $item = Item::find($id);
-        $item->delete();
+        $menu = Menu::find($id);
+        $menu->delete();
 
         // redirect
-        return redirect('/items')->with('success', 'Item Removed');
+        return redirect('/items')->with('success', 'Menu Item Removed');
     }
 }

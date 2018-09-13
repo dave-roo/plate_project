@@ -10,7 +10,7 @@
         <p>
             <strong>Category:</strong> {{ $item->category }}<br>
             <strong>Title:</strong> {{ $item->title }}<br>
-            <strong>Description:</strong> {{ $item->body }}<br>
+            <strong>Description:</strong> {{ $item->description }}<br>
             <strong>Price:</strong> $ {{ $item->price }}
         </p>
     </div>
