@@ -3,64 +3,63 @@
 <title>SmartServe | Order Create</title>
 <h1>Create an Order</h1>
 
-<table class="table table-striped table-bordered">
-<thead>
-        <tr>
-            <td>Order ID</td>
-            <td>Category</td>
-            <td>Meal</td>
-            <td>Quantity</td>
-            <td>Price $</td>
-            <td>Table</td>
-            <td>Seat</td>
-            <td>Comments</td>
-        </tr>
-    </thead>
+<form method="post" action="/orders/store" enctype="multipart/form-data">
+	{{ csrf_field() }}
+	<table class="table table-striped table-bordered">
+	<thead>
+			<tr>
+				<td>Order ID</td>
+				<td>Category</td>
+				<td>Meal</td>
+				<td>Quantity</td>
+				<td>Price $</td>
+				<td>Table</td>
+				<td>Seat</td>
+				<td>Comments</td>
+			</tr>
+		</thead>
 
-<tbody>
-<tr>
-    <td>
-		<input id="orderid" class="form-control" placeholder="Order ID">
-        </td>
-    <td>
-		<div class="form-group">
-		  <select class="form-control" id="category">
-			<option value="Entree">Entree</option>
-			<option value="Main">Main</option>
-			<option value="Dessert">Dessert</option>
-		  </select>
-		</div>
-    </td>
-    <td>
-		<div style="width:140px;" class="form-group">
-		  <select class="form-control" id="meal">
-			<option></option>
-		  </select>
-		</div>
-    </td>
-    <td>
-        <input id="amount" class="form-control" size="2">
-    </td>
-    <td>
-        <input id="price" class="form-control" size="4" readonly>
-    </td>
-    <td>
-		<input id="table" size="2" class="form-control">
-    </td>
-    <td>
-	    <input id="seat" size="2" class="form-control">
-    </td>
-    <td>
-        <textarea id="comments" class="form-control" placeholder=""></textarea>
+	<tbody>
+	<tr>
+		<td>
+			<input name="orderid" id="orderid" class="form-control" placeholder="Order ID">
+			</td>
+		<td>
+			<div class="form-group">
+			  <select name="category" class="form-control" id="category">
+				<option value="Entree">Entree</option>
+				<option value="Main">Main</option>
+				<option value="Dessert">Dessert</option>
+			  </select>
+			</div>
 		</td>
 		<td>
-<p>Submit Button</p>
+			<div style="width:140px;" class="form-group">
+			  <select name="title" class="form-control" id="meal">
+			  </select>
+			</div>
 		</td>
-</tr>
-</tbody>
+		<td>
+			<input name="quantity" id="quantity" class="form-control" size="2">
+		</td>
+		<td>
+			<input name="price" id="price" class="form-control" size="4" readonly>
+		</td>
+		<td>
+			<input name="table" id="table" size="2" class="form-control">
+		</td>
+		<td>
+			<input name="seat" id="seat" size="2" class="form-control">
+		</td>
+		<td>
+			<textarea name="comments" id="comments" class="form-control" placeholder=""></textarea>
+		</td>
+	</tr>
+	</tbody>
+	</table>
 
-</table>
-
+	<input id="submit" type="submit" value="Submit" class="btn btn-primary">
+</form>
 
 <script>
 document.onload = started();

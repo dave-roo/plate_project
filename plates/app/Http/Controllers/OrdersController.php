@@ -70,19 +70,21 @@ class OrdersController extends Controller
 
             // store
             $order = new Order;
-			$order->orderid = $request->input('orderid');//2
+			$order->orderid = $request->input('orderid');
             $order->category = $request->input('category');
-            $order->title = $request->input('title');
-            $order->comments = $request->input('comments');//comments = "test";//
+			$order->name = $request->input('title');
+			$order->title = $request->input('title');
+			$order->description = $request->input('title');
+            $order->comments = $request->input('comments');
             $order->quantity = $request->input('quantity');
-            $order->price = 22;//$request->input('price');
+            $order->price = $request->input('price');
             $order->table = $request->input('table');
             $order->seat = $request->input('seat');
             $order->save();
 
             // redirect
             return redirect('/orders')->with('success', 'Order Placed');
-    }
+}
 
     /**
      * Display the specified resource.

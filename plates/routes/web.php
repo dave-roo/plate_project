@@ -67,6 +67,8 @@ Route::get('/menu', 'ItemsController@index');
 
 Route::resource('orders', 'OrdersController');
 
+Route::post('/orders/store', 'OrdersController@store');
+
 Route::get('/getmains', 'OrdersController@getmains');
 
 Route::get('/getprice', 'OrdersController@getprice');
