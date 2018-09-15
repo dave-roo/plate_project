@@ -68,23 +68,31 @@ class OrdersController extends Controller
             ]); 
            */ 
 
-            // store
-            $order = new Order;
-			$order->orderid = $request->input('orderid');
-            $order->category = $request->input('category');
-			$order->name = $request->input('title');
-			$order->title = $request->input('title');
-			$order->description = $request->input('title');
-            $order->comments = $request->input('comments');
-            $order->quantity = $request->input('quantity');
-            $order->price = $request->input('price');
-            $order->table = $request->input('table');
-            $order->seat = $request->input('seat');
-            $order->save();
-
+		   
+		    $count = DB::table('orders')->max('id');
+		   	for ($x = 1; $x < 6; $x++) {
+			if($request->input('quantity_'.$x) >= 1){
+				$order = new Order;
+				
+				$order->category = $request->input('category_'.$x);	
+				$order->orderid = $count;
+				$order->name = $request->input('title_'.$x);
+				$order->title = $request->input('title_'.$x);
+				$order->description = $request->input('title_'.$x);
+				$order->comments = $request->input('comments_'.$x);
+				$order->quantity = $request->input('quantity_'.$x);
+				$order->price = $request->input('price_'.$x);
+				$order->table = $request->input('table_'.$x);
+				$order->seat = $request->input('seat_'.$x);
+				
+				$order->save();
+			}
+			}
+			
             // redirect
             return redirect('/orders')->with('success', 'Order Placed');
 }
+
 
     /**
      * Display the specified resource.

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+	<script src="{{ asset('js/jquery.min.js') }}"></script>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 </head>
 <body>

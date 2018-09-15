@@ -13,15 +13,14 @@
 <table class="table table-striped table-bordered">
     <thead>
         <tr>
-            <td>ID</td>
             <td>Order ID</td>
             <td>Category</td>
-            <td>Title</td>
-            <td>Comments</td>
+            <td>Description</td>
             <td>Quantity</td>
             <td>Price $</td>
             <td>Table</td>
             <td>Seat</td>
+            <td>Comments</td>
         </tr>
     </thead>
     <tbody>
@@ -57,15 +56,14 @@
             @endforeach
     
         <tr>
-            <td>{{ $value->id }}</td>
             <td>{{ $value->orderid }}</td>
             <td>{{ $value->category }}</td> 
             <td>{{ $value->title }}</td>
-            <td>{{ $value->comments }}</td>
             <td>{{ $value->quantity }}</td>
             <td>{{ $value->price }}</td>
             <td>{{ $value->table }}</td>
             <td>{{ $value->seat }}</td>
+            <td>{{ $value->comments }}</td>
 
             <!-- we will also add show, edit, and delete buttons -->
             <td>
@@ -77,7 +75,7 @@
                     {{ Form::submit('Delete this Order', array('class' => 'btn btn-warning')) }}
                 {{ Form::close() }}
                 <!-- show the nerd (uses the show method found at GET /nerds/{id} -->
-                <a class="btn btn-small btn-success" href="{{ URL::to('orders/' . $value->id) }}">Show this Order</a>
+                <!-- <a class="btn btn-small btn-success" href="{{ URL::to('orders/' . $value->id) }}">Show this Order</a>-->
 
                 <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
                 <a class="btn btn-small btn-info" href="{{ URL::to('orders/' . $value->id . '/edit') }}">Edit this Order</a>
