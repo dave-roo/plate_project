@@ -58,32 +58,64 @@ class OrdersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {   /*
-        // Validation 
-         $this->validate($request, [ 
-            'category' => 'required|max:25|regex:/^[\pL\s\-]+$/u',
-            'title' => 'required|max:25|regex:/^[\pL\s\-]+$/u',
-            'body' => 'required|max:500',
-            'price' => 'required',
-            ]); 
-           */ 
-
+    {   
 		   
 		    $count = DB::table('orders')->max('id');
 		   	for ($x = 1; $x < 6; $x++) {
 			if($request->input('quantity_'.$x) >= 1){
 				$order = new Order;
 				
-				$order->category = $request->input('category_'.$x);	
+				$categoryinput = $request->input('category_'.$x);
+				
+				if($categoryinput == "Entree" || $categoryinput == "Main" || $categoryinput == "Dessert" || $categoryinput == ""){
+					$order->category = $request->input('category_'.$x);	
+				}
+				else{
+					return back()->withErrors('Incorrect Category -'.$x);				
+				}
+				
 				$order->orderid = $count;
-				$order->name = $request->input('title_'.$x);
-				$order->title = $request->input('title_'.$x);
-				$order->description = $request->input('title_'.$x);
-				$order->comments = $request->input('comments_'.$x);
-				$order->quantity = $request->input('quantity_'.$x);
-				$order->price = $request->input('price_'.$x);
-				$order->table = $request->input('table_'.$x);
-				$order->seat = $request->input('seat_'.$x);
+								
+				if($request->input('title_'.$x) != null){
+					$order->name = $request->input('title_'.$x);
+					$order->title = $request->input('title_'.$x);
+					$order->description = $request->input('title_'.$x);
+				}
+				else{
+					return back()->withErrors(' Meal not selected -'.$x);
+				}
+				
+				if($request->input('comments_'.$x) == null){
+					$order->comments = "None";
+				}
+				
+				if($request->input('quantity_'.$x) > 0) {
+					$order->quantity = $request->input('quantity_'.$x);
+				}
+				else{
+					return back()->withErrors('Quantity not entered -'.$x);
+				}
+				
+				if($request->input('price_'.$x) > 0) {
+					$order->price = $request->input('price_'.$x);
+				}
+				else{
+					return back()->withErrors(' Price Error -'.$x);
+				}
+				
+				if($request->input('table_'.$x) > 0) {
+					$order->table = $request->input('table_'.$x);
+				}
+				else{
+					return back()->withErrors(' Table not selected -'.$x);
+				}
+						
+				if($request->input('seat_'.$x) > 0) {
+					$order->seat = $request->input('seat_'.$x);
+				}
+				else{
+					return back()->withErrors(' Seat not selected -'.$x);
+				}
 				
 				$order->save();
 			}

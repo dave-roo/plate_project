@@ -15,9 +15,9 @@
         <tr>
             <td>ID</td>
             <td>Category</td>
-            <td>Title</td>
+            <td>Name</td>
             <td>Description</td>
-            <td>Price $</td>
+            <td>Price</td>
         </tr>
     </thead>
     <tbody>
@@ -39,7 +39,6 @@
                     {{ Form::submit('Delete this Item', array('class' => 'btn btn-warning')) }}
                 {{ Form::close() }}
                 <!-- show the nerd (uses the show method found at GET /nerds/{id} -->
-                <a class="btn btn-small btn-success" href="{{ URL::to('items/' . $value->id) }}">Show this Item</a>
 
                 <!-- edit this nerd (uses the edit method found at GET /nerds/{id}/edit -->
                 <a class="btn btn-small btn-info" href="{{ URL::to('items/' . $value->id . '/edit') }}">Edit this Item</a>

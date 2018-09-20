@@ -22,12 +22,12 @@
 				  <tr>
 					<th>ID</th>
 					<th>Order</th>
-					<th>Item</th>
-					<th>Table</th>
 					<th>Category</th>
 					<th>Description</th>
-					<th>Special</th>
+					<th>Table</th>
+					<th>Seat</th>
 					<th>Comments</th>
+					<th>Order Taken</th>
 				  </tr>
 				</thead>
 				<tbody>
@@ -35,12 +35,12 @@
 				  <tr>
 					<td>{{$order['id']}}</td>
 					<td>{{$order['orderid']}}</td>
-					<td>{{$order['itemid']}}</td>
-					<td>{{$order['table']}}</td>
 					<td>{{$order['category']}}</td>
 					<td>{{$order['description']}}</td>
-					<td>{{$order['special']}}</td>
+					<td>{{$order['table']}}</td>
+					<td>{{$order['seat']}}</td>
 					<td>{{$order['comments']}}</td>
+					<td>{{$order['created_at']}}</td>
 				  </tr>
 				  @endforeach
 				</tbody>

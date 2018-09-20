@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Faker\Generator as Faker;
+use Carbon\Carbon;
 
 class CreateCustomeractivityTable extends Migration
 {
@@ -22,18 +24,25 @@ class CreateCustomeractivityTable extends Migration
 			$table->integer('duration');
 			$table->dateTime('arrival');
 			$table->dateTime('departure');
+			$table->dateTime('created_at');
+			$table->dateTime('updated_at');
+			
         });
 		
-		for($i=0;$i<1000;$i++){
-		DB::table('customeractivity')->insert(
-			array(
-				'guests' => rand(1, 10),
-				'table' => rand(1, 2),
-				'duration'=>rand(1,180),
-				'arrival'=>'2018-09-' . rand(1,30) . ' 20:34:05',
-				'departure'=>'2018-09-' . rand(1,30) . ' 20:34:05'
-			)
-		);
+		$dt = Carbon::now();
+        $dateNow = $dt->toDateTimeString();
+		
+		for ($x = 0; $x <= 100; $x++) {
+			$arrdepday = rand (1,12);
+			DB::table('customeractivity')->insert([
+				'guests' => rand (1,10),
+				'table' => rand (1,10),
+				'duration' => rand (1,10),
+				'arrival' => Carbon::create(2018, $arrdepday, $arrdepday, 0, 0, 0),
+				'departure' => Carbon::create(2018, $arrdepday, $arrdepday, 0, 0, 0),
+				'created_at' => Carbon::create(2018, $arrdepday, $arrdepday, 0, 0, 0),
+				'updated_at' => $dateNow,
+			]);
 		}
 		
     }

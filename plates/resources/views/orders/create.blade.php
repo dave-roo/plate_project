@@ -59,18 +59,13 @@
 echo 
 'document.onload = started_' .$x. '();
 
-	$( "#category_' .$x. '" ).val("Entree");
+	$( "#category_' .$x. '" ).val("");
 	
 function started_' .$x. '(){
-	
+
 	$("#category_' .$x. '").append("<option value='."Entree".'>Entree</option>");
 	$("#category_' .$x. '").append("<option value='."Main".'>Main</option>");
 	$("#category_' .$x. '").append("<option value='."Dessert".'>Dessert</option>");
-	
-	$("#meal_' .$x. '").append("<option value='."Soup".'>Soup</option>");
-	$("#meal_' .$x. '").append("<option value='."Salad".'>Salad</option>");
-	
-	$("#price_' .$x. '").val("4");
 }
 
 $("#meal_' .$x. '").change(function() {

@@ -10,27 +10,28 @@
 
 {!! Form::open(['action' => 'ItemsController@store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
 
+<div style="width:180px">
+
 <div class="form-group">
     {{Form::label('category', "Category")}}
-    <!--Form::text('category', '', ['class' => 'form-control', 'placeholder' => 'Entree Main Dessert'])}}-->
-        
-    {{ Form::select('category', array('Entree' => 'Entree', 'Main' => 'Main', 'Dessert' => 'Dessert'))}}
-
+    {{ Form::select('category', array('Entree' => 'Entree', 'Main' => 'Main', 'Dessert' => 'Dessert'), null, ['class' => 'form-control'])}}
+    
 </div>
 
 <div class="form-group">
-        {{ Form::label('title', 'Title') }}
-        {{ Form::text('title', '', ['class' => 'form-control', 'placeholder' => 'Name Of Item'])}}
-    </div>
+    {{ Form::label('title', 'Name') }}
+    {{Form::text('title', null, ['class' => 'form-control'])}}
+</div>
 
 <div class="form-group">
     {{ Form::label('description', 'Description') }}
-    {{Form::textarea('description', '', ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Description'])}}
+    {{Form::text('description', null, ['id' => 'article-ckeditor', 'class' => 'form-control'])}}
+</div>
 </div>
 
-<div class="form-group">
+<div style="width:80px" class="form-group">
     {{Form::label('price', "Price")}}
-    {!!Form::number('price', '', ['class' => 'form-control', 'placeholder' => 'Price', 'step' => '0.01'])!!}
+    {!!Form::number('price', null, ['class' => 'form-control', 'step' => '0.5'])!!}
 </div>
 
 {{Form::submit('Submit', ['class'=>'btn btn-primary'])}}  

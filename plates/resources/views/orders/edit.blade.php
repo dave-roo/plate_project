@@ -13,18 +13,20 @@
         <tr>
             <td>Order ID</td>
             <td>Category</td>
-            <td>Title</td>
-            <td>Comments</td>
+            <td>Description</td>
             <td>Quantity</td>
-            <td>Price $</td>
+            <td>Price</td>
             <td>Table</td>
             <td>Seat</td>
+            <td>Comments</td>
         </tr>
     </thead>
 
     <!-- PHP Area For Title Info -->
         <!-- Set Title-->
-            @php $i = 1; $setTitle = 'not set';@endphp
+            @php $i = 1; $setTitle = 'not set';
+			
+			@endphp
                 @foreach($select as $key2 => $value2)
                     @if($order->title == $i)
                         @php $setTitle = $value2; @endphp
@@ -47,42 +49,28 @@
     <tbody>
     <tr>
         <td>
-            {{Form::label('orderid', "Order_ID")}}
-            {{ Form::number('orderid', $order->orderid, ['class' => 'form-control', 'placeholder' => 'Order ID'])}}
-            <!--select('orderid', array('1' => '1', '2' => '2', '3' => '3', '4' => '4', '5' => '5', '6' => '6', '7' => '7', '8' => '8', '9' => '9', '10' => '10'))}}
-            -->
-            </td>
-        <td>
-            {{Form::label('category', "Category")}}
-            {{ Form::select('category', array('Entree' => 'Entree', 'Main' => 'Main', 'Dessert' => 'Dessert'), ['placeholder' => $order->category])}}
+            {{ Form::number('orderid', $order->orderid, ['class' => 'form-control'])}}
         </td>
         <td>
-            {{Form::label('title', "Title")}}
-            {{ Form::select('title', $select, null, ['class' => 'form-control', 'placeholder' => $setTitle])}}
+            {{ Form::select('category', array('Entree' => 'Entree', 'Main' => 'Main', 'Dessert' => 'Dessert'), null, ['class' => 'form-control'])}}
         </td>
         <td>
-            {{ Form::label('comments', "Comments") }}
+            {{ Form::select('title', $select, null, ['class' => 'form-control'])}}
+        </td>
+        <td>
+            {{ Form::number('quantity', $order->quantity, ['class' => 'form-control', 'placeholder' => 'Quantity'])}}
+        </td>
+        <td>
+			{{ Form::number('price', $order->price, ['class' => 'form-control'])}}
+        </td>
+        <td>
+            {{ Form::number('table', $order->table, ['class' => 'form-control', 'placeholder' => 'Table NO.'])}}
+        </td>
+        <td>
+            {{ Form::number('seat', $order->seat, ['class' => 'form-control', 'placeholder' => 'Seat NO.'])}}
+        </td>
+        <td>
             {{Form::text('comments', $order->comments, ['id' => 'article-ckeditor', 'class' => 'form-control', 'placeholder' => 'Description'])}}
-        </td>
-        <td>
-                {{Form::label('quantity', "Quantity")}}
-                {{ Form::number('quantity', $order->quantity, ['class' => 'form-control', 'placeholder' => 'Quantity'])}}
-        </td>
-        <td>
-           <!-- {Form::label('price', "Price")}}
-            { Form::select('price', array('Entree' => 'Entree', 'Main' => 'Main', 'Dessert' => 'Dessert'))}} -->
-    
-            <p>Display Price</p>
-    
-    
-        </td>
-        <td>
-                {{Form::label('table', "Table")}}
-                {{ Form::number('table', $order->table, ['class' => 'form-control', 'placeholder' => 'Table NO.'])}}
-        </td>
-        <td>
-                {{Form::label('seat', "Seat")}}
-                {{ Form::number('seat', $order->seat, ['class' => 'form-control', 'placeholder' => 'Seat NO.'])}}
         </td>
     </tr>
     </tbody>
